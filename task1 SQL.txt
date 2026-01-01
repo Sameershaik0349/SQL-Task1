@@ -276,7 +276,7 @@ MySQL  localhost:33060+ ssl  task1  SQL > desc student_table;
 
 
 --------------------------------------------------------------------------------------------
-Create a Product table with any 2 columns.?
+1)Create a Product table with any 2 columns.?
 MySQL  localhost:33060+ ssl  task1  SQL > create table product_table;
 ERROR: 4028: A table must have at least one visible column.
 
@@ -384,10 +384,10 @@ MySQL  localhost:33060+ ssl  task1  SQL > desc product_table;
 | prod_name1 | varchar(20) | YES  |     | NULL    |       |
 +------------+-------------+------+-----+---------+-------+
 
+------------------------------------------------------------------------------------------------
 
 
-
-Create a Product table with any 2 columns.?
+1)Create a Product table with any 2 columns.?
  MySQL  localhost:33060+ ssl  task1  SQL > create table dep_table(courses varchar(20),no_of_courses int);
 Query OK, 0 rows affected (0.0487 sec)
  MySQL  localhost:33060+ ssl  task1  SQL > desc dep_table

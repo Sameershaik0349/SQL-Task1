@@ -1,0 +1,500 @@
+1) Create an Employee table with any 2 columns.?
+
+ MySQL  localhost:33060+ ssl  task1  SQL > create table employee_table(emp_id int,emp_name varchar(20));
+Query OK, 0 rows affected (0.0695 sec)
+ MySQL  localhost:33060+ ssl  task1  SQL > show tables;
++-----------------+
+| Tables_in_task1 |
++-----------------+
+| employee_table  |
++-----------------+
+1 row in set (0.0031 sec)
+ MySQL  localhost:33060+ ssl  task1  SQL > desc employee_table;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| emp_id   | int         | YES  |     | NULL    |       |
+| emp_name | varchar(20) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+2 rows in set (0.0027 sec)
+
+-------------------------------------------------------------------
+
+2) Add a new column to the table at first.?
+
+
+ MySQL  localhost:33060+ ssl  task1  SQL > alter table employee_table add column emp_mobile int first;
+Query OK, 0 rows affected (0.1037 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+ MySQL  localhost:33060+ ssl  task1  SQL > show tables;
++-----------------+
+| Tables_in_task1 |
++-----------------+
+| employee_table  |
++-----------------+
+1 row in set (0.0030 sec)
+MySQL  localhost:33060+ ssl  task1  SQL > desc employee_table ;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| emp_mobile | int         | YES  |     | NULL    |       |
+| emp_id     | int         | YES  |     | NULL    |       |
+| emp_name   | varchar(20) | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+3 rows in set (0.0034 sec)
+
+------------------------------------------------------------------------------------
+
+3) Add a new column to the table at last.?
+
+ MySQL  localhost:33060+ ssl  task1  SQL > alter table employee_table add  emp_salary int;
+Query OK, 0 rows affected (0.0703 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+ MySQL  localhost:33060+ ssl  task1  SQL > show tables;
++-----------------+
+| Tables_in_task1 |
++-----------------+
+| employee_table  |
++-----------------+
+1 row in set (0.0023 sec)
+ MySQL  localhost:33060+ ssl  task1  SQL > desc employee_table
+                                        -> ;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| emp_mobile | int         | YES  |     | NULL    |       |
+| emp_id     | int         | YES  |     | NULL    |       |
+| emp_name   | varchar(20) | YES  |     | NULL    |       |
+| emp_salary | int         | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+4 rows in set (0.0029 sec)
+-----------------------------------------------------------------------------
+
+4) Add a new column to the table after a specific column.?
+  
+ MySQL  localhost:33060+ ssl  task1  SQL > alter table employee_table add emp_address varchar(20) after emp_id ;
+Query OK, 0 rows affected (0.0704 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+ MySQL  localhost:33060+ ssl  task1  SQL > desc employee_table ;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| emp_mobile  | int         | YES  |     | NULL    |       |
+| emp_id      | int         | YES  |     | NULL    |       |
+| emp_address | varchar(20) | YES  |     | NULL    |       |
+| emp_name    | varchar(20) | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+4 rows in set (0.0021 sec)
+-----------------------------------------------------------------------
+
+5) Modify the datatype of Emp_name column.?
+
+
+ MySQL  localhost:33060+ ssl  task1  SQL > alter table employee_table modify emp_address varchar(225);
+Query OK, 0 rows affected (0.0747 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+ MySQL  localhost:33060+ ssl  task1  SQL > desc employee_table ;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| emp_mobile  | int          | YES  |     | NULL    |       |
+| emp_id      | int          | YES  |     | NULL    |       |
+| emp_address | varchar(225) | YES  |     | NULL    |       |
+| emp_name    | varchar(20)  | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+4 rows in set (0.0033 sec)
+
+
+6) Rename emp_id column name.?
+
+ MySQL  localhost:33060+ ssl  task1  SQL > alter table employee_table rename column emp_name to emp_name1;
+Query OK, 0 rows affected (0.0495 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+ MySQL  localhost:33060+ ssl  task1  SQL > desc employee_table ;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| emp_mobile  | int          | YES  |     | NULL    |       |
+| emp_id      | int          | YES  |     | NULL    |       |
+| emp_address | varchar(225) | YES  |     | NULL    |       |
+| emp_name1   | varchar(20)  | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+4 rows in set (0.0039 sec)
+
+
+7) Drop any one column.?
+
+
+ MySQL  localhost:33060+ ssl  task1  SQL > alter table employee_table drop emp_salary;
+Query OK, 0 rows affected (0.0413 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+ MySQL  localhost:33060+ ssl  task1  SQL > desc employee_table ;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| emp_mobile | int         | YES  |     | NULL    |       |
+| emp_id     | int         | YES  |     | NULL    |       |
+| emp_name   | varchar(20) | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+3 rows in set (0.0034 sec)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------------------------------------
+
+1)Create a Student table with any 2 columns.?
+
+MySQL  localhost:33060+ ssl  task1  SQL > create table student_table;
+ERROR: 4028: A table must have at least one visible column.
+
+MySQL  localhost:33060+ ssl  task1  SQL > create table student_table(stu_id int,stu_name varchar(20));
+Query OK, 0 rows affected (0.0695 sec)
+
+MySQL  localhost:33060+ ssl  task1  SQL > show tables;
++------------------+
+| Tables_in_task1  |
++------------------+
+| student_table    |
++------------------+
+1 row in set (0.0031 sec)
+
+MySQL  localhost:33060+ ssl  task1  SQL > desc student_table;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| stu_id   | int         | YES  |     | NULL    |       |
+| stu_name | varchar(20) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+
+2) Add a new column to the table at first.?
+MySQL  localhost:33060+ ssl  task1  SQL > alter table student_table add column stu_mobile int first;
+Query OK, 0 rows affected (0.1037 sec)
+
+MySQL  localhost:33060+ ssl  task1  SQL > desc student_table;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| stu_mobile | int         | YES  |     | NULL    |       |
+| stu_id     | int         | YES  |     | NULL    |       |
+| stu_name   | varchar(20) | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+
+3) Add a new column to the table at last.?
+MySQL  localhost:33060+ ssl  task1  SQL > alter table student_table add stu_fee int;
+Query OK, 0 rows affected (0.0703 sec)
+
+MySQL  localhost:33060+ ssl  task1  SQL > desc student_table;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| stu_mobile | int         | YES  |     | NULL    |       |
+| stu_id     | int         | YES  |     | NULL    |       |
+| stu_name   | varchar(20) | YES  |     | NULL    |       |
+| stu_fee    | int         | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+
+4) Add a new column after a specific column.?
+MySQL  localhost:33060+ ssl  task1  SQL > alter table student_table add stu_address varchar(20) after stu_id;
+Query OK, 0 rows affected (0.0704 sec)
+
+MySQL  localhost:33060+ ssl  task1  SQL > desc student_table;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| stu_mobile  | int         | YES  |     | NULL    |       |
+| stu_id      | int         | YES  |     | NULL    |       |
+| stu_address | varchar(20) | YES  |     | NULL    |       |
+| stu_name    | varchar(20) | YES  |     | NULL    |       |
+| stu_fee     | int         | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+
+5) Modify the datatype of Stu_name column.?
+MySQL  localhost:33060+ ssl  task1  SQL > alter table student_table modify stu_address varchar(225);
+Query OK, 0 rows affected (0.0747 sec)
+
+MySQL  localhost:33060+ ssl  task1  SQL > desc student_table;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| stu_mobile  | int          | YES  |     | NULL    |       |
+| stu_id      | int          | YES  |     | NULL    |       |
+| stu_address | varchar(225) | YES  |     | NULL    |       |
+| stu_name    | varchar(20)  | YES  |     | NULL    |       |
+| stu_fee     | int          | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+
+6) Rename stu_id column name.?
+MySQL  localhost:33060+ ssl  task1  SQL > alter table student_table rename column stu_name to stu_name1;
+Query OK, 0 rows affected (0.0495 sec)
+
+MySQL  localhost:33060+ ssl  task1  SQL > desc student_table;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| stu_mobile  | int          | YES  |     | NULL    |       |
+| stu_id      | int          | YES  |     | NULL    |       |
+| stu_address | varchar(225) | YES  |     | NULL    |       |
+| stu_name1   | varchar(20)  | YES  |     | NULL    |       |
+| stu_fee     | int          | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+
+7) Drop any one column.?
+MySQL  localhost:33060+ ssl  task1  SQL > alter table student_table drop stu_fee;
+Query OK, 0 rows affected (0.0413 sec)
+
+MySQL  localhost:33060+ ssl  task1  SQL > desc student_table;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| stu_mobile | int         | YES  |     | NULL    |       |
+| stu_id     | int         | YES  |     | NULL    |       |
+| stu_name1  | varchar(20) | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+Create a Product table with any 2 columns.?
+MySQL  localhost:33060+ ssl  task1  SQL > create table product_table;
+ERROR: 4028: A table must have at least one visible column.
+
+MySQL  localhost:33060+ ssl  task1  SQL > create table product_table(prod_id int,prod_name varchar(20));
+Query OK, 0 rows affected (0.0695 sec)
+
+MySQL  localhost:33060+ ssl  task1  SQL > show tables;
++------------------+
+| Tables_in_task1  |
++------------------+
+| product_table    |
++------------------+
+1 row in set (0.0031 sec)
+
+MySQL  localhost:33060+ ssl  task1  SQL > desc product_table;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| prod_id  | int         | YES  |     | NULL    |       |
+| prod_name| varchar(20) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+
+2) Add a new column to the table at first.?
+MySQL  localhost:33060+ ssl  task1  SQL > alter table product_table add column prod_price int first;
+Query OK, 0 rows affected (0.1037 sec)
+
+MySQL  localhost:33060+ ssl  task1  SQL > desc product_table;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| prod_price | int         | YES  |     | NULL    |       |
+| prod_id    | int         | YES  |     | NULL    |       |
+| prod_name  | varchar(20) | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+
+3) Add a new column to the table at last.?
+MySQL  localhost:33060+ ssl  task1  SQL > alter table product_table add prod_qty int;
+Query OK, 0 rows affected (0.0703 sec)
+
+MySQL  localhost:33060+ ssl  task1  SQL > desc product_table;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| prod_price | int         | YES  |     | NULL    |       |
+| prod_id    | int         | YES  |     | NULL    |       |
+| prod_name  | varchar(20) | YES  |     | NULL    |       |
+| prod_qty   | int         | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+
+4) Add a new column after a specific column.?
+MySQL  localhost:33060+ ssl  task1  SQL > alter table product_table add prod_brand varchar(20) after prod_id;
+Query OK, 0 rows affected (0.0704 sec)
+
+MySQL  localhost:33060+ ssl  task1  SQL > desc product_table;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| prod_price  | int         | YES  |     | NULL    |       |
+| prod_id     | int         | YES  |     | NULL    |       |
+| prod_brand  | varchar(20) | YES  |     | NULL    |       |
+| prod_name   | varchar(20) | YES  |     | NULL    |       |
+| prod_qty    | int         | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+
+5) Modify the datatype of Prod_name column.?
+MySQL  localhost:33060+ ssl  task1  SQL > alter table product_table modify prod_brand varchar(225);
+Query OK, 0 rows affected (0.0747 sec)
+
+MySQL  localhost:33060+ ssl  task1  SQL > desc product_table;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| prod_price  | int          | YES  |     | NULL    |       |
+| prod_id     | int          | YES  |     | NULL    |       |
+| prod_brand  | varchar(225) | YES  |     | NULL    |       |
+| prod_name   | varchar(20)  | YES  |     | NULL    |       |
+| prod_qty    | int          | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+
+6) Rename prod_id column name.?
+MySQL  localhost:33060+ ssl  task1  SQL > alter table product_table rename column prod_name to prod_name1;
+Query OK, 0 rows affected (0.0495 sec)
+
+MySQL  localhost:33060+ ssl  task1  SQL > desc product_table;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| prod_price  | int          | YES  |     | NULL    |       |
+| prod_id     | int          | YES  |     | NULL    |       |
+| prod_brand  | varchar(225) | YES  |     | NULL    |       |
+| prod_name1  | varchar(20)  | YES  |     | NULL    |       |
+| prod_qty    | int          | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+
+7) Drop any one column.?
+MySQL  localhost:33060+ ssl  task1  SQL > alter table product_table drop prod_qty;
+Query OK, 0 rows affected (0.0413 sec)
+
+MySQL  localhost:33060+ ssl  task1  SQL > desc product_table;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| prod_price | int         | YES  |     | NULL    |       |
+| prod_id    | int         | YES  |     | NULL    |       |
+| prod_name1 | varchar(20) | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+
+
+
+
+Create a Product table with any 2 columns.?
+ MySQL  localhost:33060+ ssl  task1  SQL > create table dep_table(courses varchar(20),no_of_courses int);
+Query OK, 0 rows affected (0.0487 sec)
+ MySQL  localhost:33060+ ssl  task1  SQL > desc dep_table
+                                        -> ;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| courses       | varchar(20) | YES  |     | NULL    |       |
+| no_of_courses | int         | YES  |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+2 rows in set (0.0039 sec)
+
+
+
+2) Add a new column to the table at first.?
+  MySQL  localhost:33060+ ssl  task1  SQL > alter table dep_table add column s_no int first;
+Query OK, 0 rows affected (0.0906 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+ MySQL  localhost:33060+ ssl  task1  SQL > desc dep_table ;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| s_no          | int         | YES  |     | NULL    |       |
+| courses       | varchar(20) | YES  |     | NULL    |       |
+| no_of_courses | int         | YES  |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+
+3) Add a new column to the table at last.?
+ MySQL  localhost:33060+ ssl  task1  SQL > alter table dep_table add  corses_techers varchar(30);
+Query OK, 0 rows affected (0.0599 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+ MySQL  localhost:33060+ ssl  task1  SQL > desc dep_table ;
++----------------+-------------+------+-----+---------+-------+
+| Field          | Type        | Null | Key | Default | Extra |
++----------------+-------------+------+-----+---------+-------+
+| s_no           | int         | YES  |     | NULL    |       |
+| courses        | varchar(20) | YES  |     | NULL    |       |
+| no_of_courses  | int         | YES  |     | NULL    |       |
+| corses_techers | varchar(30) | YES  |     | NULL    |       |
++----------------+-------------+------+-----+---------+-------+
+
+4) Add a new column after a specific column.?
+ MySQL  localhost:33060+ ssl  task1  SQL > alter table dep_table add column corses_teacher_gender varchar(30) after no_of_courses;
+Query OK, 0 rows affected (0.0796 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+ MySQL  localhost:33060+ ssl  task1  SQL > desc dep_table ;
++-----------------------+-------------+------+-----+---------+-------+
+| Field                 | Type        | Null | Key | Default | Extra |
++-----------------------+-------------+------+-----+---------+-------+
+| s_no                  | int         | YES  |     | NULL    |       |
+| courses               | varchar(20) | YES  |     | NULL    |       |
+| no_of_courses         | int         | YES  |     | NULL    |       |
+| corses_teacher_gender | varchar(30) | YES  |     | NULL    |       |
+| corses_techers        | varchar(30) | YES  |     | NULL    |       |
++-----------------------+-------------+------+-----+---------+-------+
+5 rows in set (0.0033 sec)
+
+
+
+5) Modify the datatype of Prod_name column.?
+ MySQL  localhost:33060+ ssl  task1  SQL > alter table dep_table modify column corses_techers varchar(225);
+Query OK, 0 rows affected (0.0855 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+ MySQL  localhost:33060+ ssl  task1  SQL > desc dep_table ;
++----------------+--------------+------+-----+---------+-------+
+| Field          | Type         | Null | Key | Default | Extra |
++----------------+--------------+------+-----+---------+-------+
+| courses        | varchar(20)  | YES  |     | NULL    |       |
+| no_of_courses  | int          | YES  |     | NULL    |       |
+| no_of_course   | varchar(30)  | YES  |     | NULL    |       |
+| corses_techers | varchar(225) | YES  |     | NULL    |       |
++----------------+--------------+------+-----+---------+-------+
+4 rows in set (0.0036 sec)
+
+6) Rename prod_id column name.?
+ alter table dep_table rename column corses_teacher_gender to no_of_course;
+Query OK, 0 rows affected (0.0249 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+ MySQL  localhost:33060+ ssl  task1  SQL > desc dep_table ;
++----------------+-------------+------+-----+---------+-------+
+| Field          | Type        | Null | Key | Default | Extra |
++----------------+-------------+------+-----+---------+-------+
+| courses        | varchar(20) | YES  |     | NULL    |       |
+| no_of_courses  | int         | YES  |     | NULL    |       |
+| no_of_course   | varchar(30) | YES  |     | NULL    |       |
+| corses_techers | varchar(30) | YES  |     | NULL    |       |
++----------------+-------------+------+-----+---------+-------+
+4 rows in set (0.0031 sec)
+
+
+7) Drop any one column.?
+ MySQL  localhost:33060+ ssl  task1  SQL > alter table dep_table drop s_no;
+Query OK, 0 rows affected (0.0557 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+ MySQL  localhost:33060+ ssl  task1  SQL > desc dep_table ;
++-----------------------+-------------+------+-----+---------+-------+
+| Field                 | Type        | Null | Key | Default | Extra |
++-----------------------+-------------+------+-----+---------+-------+
+| courses               | varchar(20) | YES  |     | NULL    |       |
+| no_of_courses         | int         | YES  |     | NULL    |       |
+| corses_teacher_gender | varchar(30) | YES  |     | NULL    |       |
+| corses_techers        | varchar(30) | YES  |     | NULL    |       |
++-----------------------+-------------+------+-----+---------+-------+
+4 rows in set (0.0033 sec)
